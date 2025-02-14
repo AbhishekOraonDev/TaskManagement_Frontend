@@ -1,0 +1,12 @@
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling on the navbar */
+}
+
+.min-h-screen {
+  /* padding-top: 4rem; Adjust for navbar height */
+  height: calc(100vh - 4rem);
+  overflow-y: auto; /* Allow scrolling below navbar */
+}
