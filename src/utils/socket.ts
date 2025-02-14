@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const SOCKET_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
+const SOCKET_URL = "https://taskmanagement-backend-uxtd.onrender.com";
 
 export const socket = io(SOCKET_URL, {
   withCredentials: true,

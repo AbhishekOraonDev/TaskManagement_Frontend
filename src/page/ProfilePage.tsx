@@ -31,7 +31,7 @@ const ProfilePage = () => {
         const fetchProfile = async () => {
             try {
                 const response = await axios.get<{ status: string; data: ProfileData }>(
-                    `${import.meta.env.VITE_BASE_URL}/api/user/profile`,
+                    `https://taskmanagement-backend-uxtd.onrender.com/api/user/profile`,
                     { withCredentials: true }
                 );
                 setProfile(response.data.data);

@@ -23,7 +23,7 @@ export default function NavbarComponent() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/auth/logout`, {
+      const response = await fetch(`https://taskmanagement-backend-uxtd.onrender.com/api/auth/logout`, {
         method: 'POST',
         credentials: 'include',
       });

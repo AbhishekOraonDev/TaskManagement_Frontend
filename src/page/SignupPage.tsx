@@ -20,7 +20,7 @@ const Signup = () => {
         try {
             // Call the registerUser API
             const response = await axios.post(
-                `${import.meta.env.VITE_BASE_URL}/api/user/register`,
+                `https://taskmanagement-backend-uxtd.onrender.com/api/user/register`,
                 { userName, userEmail, password },
                 { withCredentials: true } // Include cookies if needed
             );
