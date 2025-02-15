@@ -41,7 +41,7 @@ const Dashboard = () => {
             setLoading(true);
             try {
                 const res = await fetch(
-                    `https://taskmanagement-backend-uxtd.onrender.com/api/task?search=${search}&status=${status}&page=${page}&limit=5`,
+                    `${import.meta.env.VITE_BASE_URL}/api/task?search=${search}&status=${status}&page=${page}&limit=5`,
                     {
                         credentials: "include",
                         headers: {
@@ -135,7 +135,7 @@ const Dashboard = () => {
         if (!taskName.trim()) return toast.warning("Task name is required!");
 
         try {
-            const res = await fetch(`https://taskmanagement-backend-uxtd.onrender.com/api/task/create`, {
+            const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/task/create`, {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -163,7 +163,7 @@ const Dashboard = () => {
         if (!confirm("Are you sure you want to delete this task?")) return;
 
         try {
-            const res = await fetch(`https://taskmanagement-backend-uxtd.onrender.com/api/task/${taskId}`, {
+            const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/task/${taskId}`, {
                 method: "DELETE",
                 credentials: "include",
             });
@@ -195,7 +195,7 @@ const Dashboard = () => {
 
     const handleUpdateTask = async (taskId: string) => {
         try {
-            const res = await fetch(`https://taskmanagement-backend-uxtd.onrender.com/api/task/${taskId}`, {
+            const res = await fetch(`${import.meta.env.VITE_BASE_URL}/api/task/${taskId}`, {
                 method: "PUT",
                 credentials: "include",
                 headers: {
