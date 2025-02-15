@@ -30,6 +30,8 @@ export default function NavbarComponent() {
 
       if (response.ok) {
         logout();
+        localStorage.removeItem("token"); // Clear token
+        localStorage.removeItem("user"); // Clear user data
         navigate('/login');
       } else {
         console.error('Logout failed:', response.statusText);
@@ -42,13 +44,13 @@ export default function NavbarComponent() {
   const handleProfileRedirect = () => navigate("/profile");
 
   const handleTabClick = (href: string) => {
-  if (href.startsWith('http')) {
-    window.open(href, '_blank'); // Open external link in a new tab
-  } else {
-    setCurrentTab(href);
-    navigate(href);
-  }
-};
+    if (href.startsWith('http')) {
+      window.open(href, '_blank'); // Open external link in a new tab
+    } else {
+      setCurrentTab(href);
+      navigate(href);
+    }
+  };
 
 
   return (
@@ -95,7 +97,7 @@ export default function NavbarComponent() {
                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none"
               >
                 <MenuItem>
-                  <button onClick={handleProfileRedirect} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <button onClick={handleProfileRedirect} className="block w-full px-4 py-2 text-sm text-gray-700 text-left hover:bg-gray-100 focus:outline-none">
                     Your Profile
                   </button>
                 </MenuItem>
