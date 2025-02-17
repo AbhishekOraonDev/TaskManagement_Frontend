@@ -9,11 +9,8 @@ This is the frontend service for the Task Management System, providing a user-fr
 - [Technologies Used](#technologies-used)
 - [Folder Structure](#folder-structure)
 - [Installation](#installation)
-- [API Endpoints](#api-endpoints)
-- [Middlewares](#middlewares)
 - [How to Use](#how-to-use)
 - [Future Enhancements](#future-enhancements)
-- [Additional Features implementetion](#additional-features-implementetion)
 - [Contact](#contact)
 
 
